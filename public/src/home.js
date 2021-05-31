@@ -170,7 +170,6 @@ function getMostPopularAuthors(books, authors) {
     // add one to counter so it doesnt just replace the first index every time
     counter++;
   }
-  console.log(returnValue);
 
   // sort returnValue by count
   const sorted = returnValue.sort((itemA, itemB) => {
