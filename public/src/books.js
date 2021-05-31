@@ -21,19 +21,11 @@ function findBookById(books, id) {
 // this function shows whether every book is available or not
 function partitionBooksByBorrowedStatus(books) {
   // create necessary variables
-  const returnArray = [];
-  const notReturned = [];
   const returned = [];
   
-  // loop through the books array
-  for (let item in books) {
-    const book = books[item];
-    
-    // if the first index of the borrows array has a returned value of true, it will be
-    // pushed to the returned array, if not it will be pushed to the notReturned array
-    if (book.borrows[0].returned === false) notReturned.push(book);
-    if (book.borrows[0].returned === true) returned.push(book);
-  }
+  // map the values that are returned and the ones that arent, separately
+  const notReturned = books.map((book) => book.borrows[0] = false);
+  const returned = books.map((book) => book.borrows[0] = true);
 
   // push the two arrays to the returnArray 
   returnArray.push(notReturned);
